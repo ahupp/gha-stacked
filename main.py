@@ -1,5 +1,5 @@
 import os
-import requests 
+import sys
 
 # https://docs.github.com/en/actions/learn-github-actions/variables
 
@@ -12,12 +12,12 @@ def main():
     branch_prefixes = os.environ["INPUT_STACK-BRANCH-PREFIXES"]
     branch_prefixes = branch_prefixes.split(",")
 
-    print("base ref:", base_ref)
-    print("stack branch prefixes:", branch_prefixes)
     
     if any(base_ref.startswith(p) for p in branch_prefixes):
         sys.exit(f"Base branch {base_ref} is an unmedged stacked PR, matches prefix in {branch_prefixes}")
+    else:
+        print(f"Base branch {base_ref} is not a stacked PR branch")
+        sys.exit(0)
 
-    
 if __name__ == "__main__":
     main()
