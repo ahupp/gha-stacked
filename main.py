@@ -2,8 +2,8 @@ import os
 import requests 
 
 def main():
-    owner_and_repo = os.environ["GITHUB_ACTION_REPOSITORY"]
-    #event_name = os.environ["GITHUB_EVENT_NAME"]
+    #owner_and_repo = os.environ["GITHUB_ACTION_REPOSITORY"]
+    event_name = os.environ["GITHUB_EVENT_NAME"]
 
     base_ref = os.environ["GITHUB_BASE_REF"]
 
