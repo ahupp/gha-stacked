@@ -1,13 +1,6 @@
-name: "Python Container Action Template"
-description: "Get started with Python Container actions"
-author: "Jacob Tomlinson"
-inputs:
-  github-pr:
-    description: "Input to use"
-    default: "world"
-outputs:
-  myOutput:
-    description: "Output from the action"
+name: "Stacked PR merge check"
+description: "Prevent merging of stacked PRs when ancestors are not merged"
+author: "Adam Hupp"
 runs:
   using: "docker"
   image: "Dockerfile"

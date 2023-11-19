@@ -12,6 +12,8 @@ def main():
         print(f"Action not run on a pull_request, was {event_name}", file=sys.stderr)
 
     print(locals())
+    print(os.environ)
+
 """
     r = requests.get(
         f"https://api.github.com/repos/{owner_and_repo}/pulls/{pull_number}/commits",""
@@ -25,7 +27,6 @@ def main():
     pr_state = r.json()
     print(pr_state)
 """
-    print(os.environ)
     
 if __name__ == "__main__":
     main()
