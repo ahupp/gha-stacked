@@ -1,6 +1,8 @@
 import os
 import requests 
 
+# https://docs.github.com/en/actions/learn-github-actions/variables
+
 def main():
     #owner_and_repo = os.environ["GITHUB_ACTION_REPOSITORY"]
     #event_name = os.environ["GITHUB_EVENT_NAME"]
