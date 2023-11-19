@@ -4,3 +4,8 @@ author: "Adam Hupp"
 runs:
   using: "docker"
   image: "Dockerfile"
+inputs:
+  stack-branch-prefix:
+    description: Array of branch prefixes that indicate a stacked PR
+    required: false
+    default: ["gh/"]
