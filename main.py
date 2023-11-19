@@ -3,15 +3,14 @@ import requests
 
 def main():
     owner_and_repo = os.environ["GITHUB_ACTION_REPOSITORY"]
-    event_name = os.environ["GITHUB_EVENT_NAME"]
-    auth_token = os.environ["INPUT_GITHUB-TOKEN"]
+    #event_name = os.environ["GITHUB_EVENT_NAME"]
 
     base_ref = os.environ["GITHUB_BASE_REF"]
 
     if event_name != "pull_request":
         print(f"Action not run on a pull_request, was {event_name}", file=sys.stderr)
 
-    print(locals())
+    print("base ref:", base_ref)
     print(os.environ)
 
 """
