@@ -1,5 +1,6 @@
 import os
 import sys
+import json
 
 # https://docs.github.com/en/actions/learn-github-actions/variables
 
@@ -7,7 +8,11 @@ def main():
     #owner_and_repo = os.environ["GITHUB_ACTION_REPOSITORY"]
     #event_name = os.environ["GITHUB_EVENT_NAME"]
     
+    with open(os.environ["GITHUB_EVENT_PATH"]) as f:
+        event = json.load(f)
+
     print(os.environ)
+    print(event)
 
     base_ref = os.environ["GITHUB_BASE_REF"]
 
