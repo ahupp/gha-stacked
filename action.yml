@@ -1,11 +1,11 @@
-name: "Stacked PR merge check"
-description: "Prevent merging of stacked PRs when ancestors are not merged"
+name: "Previous PR in the stack is merged"
+description: "Prevent merging of stacked PRs when previous PR is not yet merged"
 author: "Adam Hupp"
 runs:
   using: "docker"
   image: "Dockerfile"
 inputs:
   stack-branch-prefixes:
-    description: Array of branch prefixes that indicate a stacked PR
+    description: Comma separated array of branch prefixes that indicate a stacked PR
     required: false
-    default: "stack/"
+    default: stack/
