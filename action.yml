@@ -8,4 +8,4 @@ inputs:
   stack-branch-prefixes:
     description: Array of branch prefixes that indicate a stacked PR
     required: false
-    default: "gh/"
+    default: "stack/"

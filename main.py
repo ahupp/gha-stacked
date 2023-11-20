@@ -12,7 +12,6 @@ def main():
     branch_prefixes = os.environ["INPUT_STACK-BRANCH-PREFIXES"]
     branch_prefixes = branch_prefixes.split(",")
 
-    
     if any(base_ref.startswith(p) for p in branch_prefixes):
         sys.exit(f"Base branch {base_ref} is an unmedged stacked PR, matches prefix in {branch_prefixes}")
     else:
