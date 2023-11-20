@@ -1,6 +1,10 @@
 name: "Stacked PR merge check"
 description: "Prevent merging of stacked PRs when ancestors are not merged"
 author: "Adam Hupp"
+on:
+  pull_request:
+    types: [synchronize, opened, reopened, edited]
+     if: ${{ github.event.changes.base }}
 runs:
   using: "docker"
   image: "Dockerfile"
